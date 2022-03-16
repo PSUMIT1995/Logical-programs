@@ -1,30 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Perfect Number");
+Console.WriteLine("Prime Number");
 
-int n, i, sum;
-
-Console.Write("Check whether a given number is perfect number or not:\n");
-
-Console.Write("Input the  number : ");
-n = Convert.ToInt32(Console.ReadLine());
-sum = 0;
+Console.WriteLine("Enter a number to check wheather its Prime or not ");
+int num = Convert.ToInt32(Console.ReadLine());
+int count = 0;
+for (int i = 1; i <= num; i++)
 {
-    Console.Write("The positive divisor  : ");
+    //checking the factors of a number by iterating from 1 to num.
+    if (num % i == 0)
+        count++;
 }
-
-for (i = 1; i < n; i++)
+if (count == 2)
 {
-    if (n % i == 0)
-    {
-        sum = sum + i;
-        Console.Write("{0}  ", i);
-    }
+    Console.WriteLine(num + " is a Prime number");
 }
-Console.Write("\nThe sum of the divisor is : {0}", sum);
-if (sum == n)
-    Console.Write("\nSo, the number is perfect.");
 else
-    Console.Write("\nSo, the number is not perfect.");
-Console.Write("\n");
-
-
+{
+    Console.WriteLine(num + " is not a Prime number");
+}
