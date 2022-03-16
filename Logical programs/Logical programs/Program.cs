@@ -1,26 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Fibonacci Series");
+Console.WriteLine("Perfect Number");
 
-int firstNumber = 0, SecondNumber = 1, nextNumber, numberOfElements;
-Console.Write("Enter the number of elements to Print : ");
+int n, i, sum;
 
-numberOfElements = int.Parse(Console.ReadLine());
+Console.Write("Check whether a given number is perfect number or not:\n");
 
-if (numberOfElements < 2)
+Console.Write("Input the  number : ");
+n = Convert.ToInt32(Console.ReadLine());
+sum = 0;
 {
-    Console.Write("Please Enter a number greater than two");
+    Console.Write("The positive divisor  : ");
 }
-else
-{
-    //First print first and second number
-    Console.Write(firstNumber + " " + SecondNumber + " ");
 
-    //Starts the loop from 2 because 0 and 1 are already printed
-    for (int i = 2; i < numberOfElements; i++)
+for (i = 1; i < n; i++)
+{
+    if (n % i == 0)
     {
-        nextNumber = firstNumber + SecondNumber;
-        Console.Write(nextNumber + " ");
-        firstNumber = SecondNumber;
-        SecondNumber = nextNumber;
+        sum = sum + i;
+        Console.Write("{0}  ", i);
     }
 }
+Console.Write("\nThe sum of the divisor is : {0}", sum);
+if (sum == n)
+    Console.Write("\nSo, the number is perfect.");
+else
+    Console.Write("\nSo, the number is not perfect.");
+Console.Write("\n");
+
+
