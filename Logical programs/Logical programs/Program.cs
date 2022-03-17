@@ -8,9 +8,7 @@ Console.Write("Check whether a given number is perfect number or not:\n");
 Console.Write("Input the  number : ");
 n = Convert.ToInt32(Console.ReadLine());
 sum = 0;
-{
-    Console.Write("The positive divisor  : ");
-}
+Console.Write("The positive divisor  : ");
 
 for (i = 1; i < n; i++)
 {
@@ -25,6 +23,5 @@ if (sum == n)
     Console.Write("\nSo, the number is perfect.");
 else
     Console.Write("\nSo, the number is not perfect.");
-Console.Write("\n");
 
 
