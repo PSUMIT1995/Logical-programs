@@ -1,14 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Coupon Numbers");
+﻿using System;
 
-Random random = new Random();
-
-var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-var stringChars = new char[15];
-
-for (int i = 0; i < stringChars.Length; i++)
+namespace CouponNumber
 {
-    stringChars[i] = chars[random.Next(chars.Length)];
-    Console.WriteLine(" Coupon Number " + stringChars[i]);
+    public class CouponNumber
+    {
+        public int N;
+        public static void Coupon(int N)
+        {
+            Random random = new Random();
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine(random.Next());
+            }
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter N Value");
+            CouponNumber c = new CouponNumber();
+            int N = Convert.ToInt32(Console.ReadLine());
+            CouponNumber.Coupon(N);
+
+        }
+    }
 }
